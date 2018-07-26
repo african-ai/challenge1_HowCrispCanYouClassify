@@ -79,14 +79,14 @@ In each case:
 
 ##### Dataset Details
 
-The Iris Dataset Details: (https://archive.ics.uci.edu/ml/datasets/iris)
+The Iris Dataset Details:
 * 150 instances/records
 	* train - 110 records
 	* test  - 40 records
 * 4 attributes/features
 * 3 classes
 
-The Handwritten Digits Dataset details: (https://archive.ics.uci.edu/ml/datasets/optical+recognition+of+handwritten+digits)
+The Handwritten Digits Dataset details: 
 * 5620 instances/records 
 	* train - 4000 records
 	* test  - 1620 records
