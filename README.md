@@ -2,9 +2,9 @@
 
 ## Data Challenge Task
 This Data Challenge has 2 tasks;
-###### to determine the type of an Iris plant given data on sepal and petal lengths and widths of the flowers
+* to determine the type of an Iris plant given data on sepal and petal lengths and widths of the flowers
 
-###### to identify a digit/number given optical data from handwritten digits
+* to identify a digit/number given optical data from handwritten digits
 
 ## Data Challenge Bounty
 ### USD 100 
