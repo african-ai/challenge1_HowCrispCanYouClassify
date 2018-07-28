@@ -57,19 +57,23 @@ $ git push origin -u 2348177779360_youremail@gmail.com
 ```
 
 3.**Remember to only make changes to the fork!**
-The folder named **data** contains 5 csv files. 
+
+The folder named **data** contains 4 csv files. 
 * iris_train
 * iris_test
 * digits_train
 * digits_test
-* sample_submission
+
+The folder names **submissions** contains 2 csv files.
+* digits_sample_submission
+* iris_sample_submission
 
 The train datasets contain labelled records, ie. their classes are known.
 In each case:
 * use the train datasets to train a satisfactory classification model
 * use the model to classify the records in the test datasets
 * ensure the format of your submission files is similar to the 
-* once satisfied with the model and the predictions, name the file containing labelled test data **iris_test_labelled** or **digit_test_labelled** and include it in the **submissions** folder  
+* once satisfied with the model and the predictions, name the file containing labelled test data **iris_test_labelled** or **digit_test_labelled** and include it in the **submissions** folder, submission files should include only 2 columns, the id and the predicted labels
 * Add to the base of the existing README file a brief explanation about your solution outlining the algorithm you chose to use, why you chose it and how the algorithm compared to any others you may have tried to use  
 
 4.Commit the changes to your fork.
