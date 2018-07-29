@@ -160,9 +160,8 @@ test_df.head()
 ```
 
 
-```html
 <div>
-<style scoped>
+<style>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -224,7 +223,7 @@ test_df.head()
   </tbody>
 </table>
 </div>
-```
+
 
 
 
