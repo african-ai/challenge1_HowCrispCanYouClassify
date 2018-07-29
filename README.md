@@ -116,7 +116,7 @@ You can use the following resources to to get acquainted with some classificatio
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
 
 
-#### A cell-by-cell go-through of my solution 
+## FLOWER CLASSIFIER: A CELL-BY-CELL WALKTHROUGH
 Decided to go with tensorflow's DNN Classifier for this problem. 
 
 A simple linear model classifier would have done for this one, but I tried using it and felt I should challenge myself with something else.
@@ -437,6 +437,10 @@ df.to_csv('submissions/iris_test_labelled.csv')
 ```
 
 ## DIGIT CLASSIFIER SOLUTION
+I created a NN with two fully-contencted layers using Keras. At the 2nd layer, I utilized a softmax function that helped me to get a score for each digit(0-9) –– so each score is the probability that the current digit image belongs to one of the 10 digit classes. The probabilities all summed to 1. 
+
+Here's how my notebook looked like:
+
 ```python
 import pandas as pd
 import numpy as np
