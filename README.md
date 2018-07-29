@@ -435,3 +435,199 @@ for index, row in df.iterrows():
 
 df.to_csv('submissions/iris_test_labelled.csv')
 ```
+
+## DIGIT CLASSIFIER SOLUTION
+```python
+import pandas as pd
+import numpy as np
+from keras import models, layers
+```
+
+    /Users/jee/.pyenv/versions/anaconda3-5.2.0/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+      return f(*args, **kwds)
+    /Users/jee/.pyenv/versions/anaconda3-5.2.0/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+      return f(*args, **kwds)
+    /Users/jee/.pyenv/versions/anaconda3-5.2.0/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+      return f(*args, **kwds)
+    /Users/jee/.pyenv/versions/anaconda3-5.2.0/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+      from ._conv import register_converters as _register_converters
+    Using TensorFlow backend.
+    /Users/jee/.pyenv/versions/anaconda3-5.2.0/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+      return f(*args, **kwds)
+    /Users/jee/.pyenv/versions/anaconda3-5.2.0/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+      return f(*args, **kwds)
+
+
+
+```python
+#prepare the data --- one hot encode it for the model to consume
+from keras.utils import to_categorical
+
+training_columns = range(1, 65)
+testing_columns = range(1, 65)
+raw_data = pd.read_csv('data/digits_train.csv', skiprows=[0], usecols=training_columns, header=None)
+training_data = raw_data.T.reset_index(drop=True).T
+
+testing_data = training_data[3900:]
+testing_data = testing_data.T.reset_index(drop=True).T
+
+training_data = training_data[:3900]
+training_data = training_data.T.reset_index(drop=True).T
+
+y = pd.read_csv('data/digits_train.csv', skiprows=[0], usecols=[65], header=None)
+y = y.T.reset_index(drop=True).T
+y_test = y[3900:]
+y_train = y[:3900]
+
+# one hot encode training data and labels
+training_images = to_categorical(training_data)
+training_labels = to_categorical(y_train)
+testing_images = to_categorical(testing_data)
+test_labels = to_categorical(y_test)
+
+print(training_images.shape)
+print(testing_images.shape)
+# reshape the training images in a shape the network will understand
+training_images = training_images.reshape(3900, 64 * 17)
+training_images = training_images.astype('float32') / 255
+testing_images = testing_images.reshape(100, 64 * 17)
+testing_images = testing_images.astype('float32') / 255
+print(testing_images.shape)
+```
+
+    (3900, 64, 17)
+    (100, 64, 17)
+    (100, 1088)
+
+
+
+```python
+
+# create a network with two fully-contencted(dense) layers.
+# the 2nd layer return an array of 10 probability scores summing to 1.
+# each score is the probability that the current digit image belongs to one of the 10 digit classes.
+
+network = models.Sequential()
+network.add(layers.Dense(512, activation="relu", input_shape=(64 * 17,)))
+network.add(layers.Dense(10, activation="softmax"))
+
+# compile the network by specifying the loss function, the optimizer and metrics to monitor during training
+network.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+```
+
+
+```python
+# fit the model to the data
+network.fit(training_images, training_labels, epochs=30, batch_size=128)
+```
+
+    Epoch 1/30
+    3900/3900 [==============================] - 1s 133us/step - loss: 0.1232 - acc: 0.9777
+    Epoch 2/30
+    3900/3900 [==============================] - 0s 81us/step - loss: 0.1195 - acc: 0.9790
+    Epoch 3/30
+    3900/3900 [==============================] - 0s 90us/step - loss: 0.1144 - acc: 0.9810
+    Epoch 4/30
+    3900/3900 [==============================] - 0s 86us/step - loss: 0.1109 - acc: 0.9803
+    Epoch 5/30
+    3900/3900 [==============================] - 0s 73us/step - loss: 0.1069 - acc: 0.9823
+    Epoch 6/30
+    3900/3900 [==============================] - 0s 64us/step - loss: 0.1034 - acc: 0.9831
+    Epoch 7/30
+    3900/3900 [==============================] - 0s 80us/step - loss: 0.1001 - acc: 0.9838
+    Epoch 8/30
+    3900/3900 [==============================] - 0s 75us/step - loss: 0.0965 - acc: 0.9846
+    Epoch 9/30
+    3900/3900 [==============================] - 0s 81us/step - loss: 0.0932 - acc: 0.9862
+    Epoch 10/30
+    3900/3900 [==============================] - 0s 68us/step - loss: 0.0897 - acc: 0.9859
+    Epoch 11/30
+    3900/3900 [==============================] - 0s 79us/step - loss: 0.0870 - acc: 0.9872
+    Epoch 12/30
+    3900/3900 [==============================] - 0s 77us/step - loss: 0.0841 - acc: 0.9877
+    Epoch 13/30
+    3900/3900 [==============================] - 0s 84us/step - loss: 0.0812 - acc: 0.9885
+    Epoch 14/30
+    3900/3900 [==============================] - 0s 71us/step - loss: 0.0784 - acc: 0.9882
+    Epoch 15/30
+    3900/3900 [==============================] - 1s 208us/step - loss: 0.0757 - acc: 0.9882
+    Epoch 16/30
+    3900/3900 [==============================] - 1s 200us/step - loss: 0.0735 - acc: 0.9887
+    Epoch 17/30
+    3900/3900 [==============================] - 1s 204us/step - loss: 0.0708 - acc: 0.9915
+    Epoch 18/30
+    3900/3900 [==============================] - 1s 179us/step - loss: 0.0689 - acc: 0.9903
+    Epoch 19/30
+    3900/3900 [==============================] - 1s 176us/step - loss: 0.0665 - acc: 0.9905
+    Epoch 20/30
+    3900/3900 [==============================] - 1s 178us/step - loss: 0.0641 - acc: 0.9913
+    Epoch 21/30
+    3900/3900 [==============================] - 1s 189us/step - loss: 0.0618 - acc: 0.9915
+    Epoch 22/30
+    3900/3900 [==============================] - 1s 173us/step - loss: 0.0595 - acc: 0.9928
+    Epoch 23/30
+    3900/3900 [==============================] - 1s 178us/step - loss: 0.0572 - acc: 0.9931
+    Epoch 24/30
+    3900/3900 [==============================] - 1s 165us/step - loss: 0.0556 - acc: 0.9931
+    Epoch 25/30
+    3900/3900 [==============================] - 0s 81us/step - loss: 0.0539 - acc: 0.9931
+    Epoch 26/30
+    3900/3900 [==============================] - 0s 77us/step - loss: 0.0521 - acc: 0.9931
+    Epoch 27/30
+    3900/3900 [==============================] - 0s 74us/step - loss: 0.0503 - acc: 0.9944
+    Epoch 28/30
+    3900/3900 [==============================] - 1s 163us/step - loss: 0.0484 - acc: 0.9941
+    Epoch 29/30
+    3900/3900 [==============================] - 1s 210us/step - loss: 0.0469 - acc: 0.9946
+    Epoch 30/30
+    3900/3900 [==============================] - 1s 191us/step - loss: 0.0453 - acc: 0.9954
+
+
+
+
+
+    <keras.callbacks.History at 0xb2affe898>
+
+
+
+
+```python
+# evaluate the accuracy of the model
+test_loss, test_accuracy = network.evaluate(testing_images, test_labels)
+print(test_accuracy)
+```
+
+    100/100 [==============================] - 0s 114us/step
+    0.96
+
+
+
+```python
+# time to find predictions
+data = pd.read_csv('data/digits_test.csv', skiprows=[0], usecols=testing_columns, header=None)
+data.head()
+# format it to be ingested for prediction
+test_data = to_categorical(data)
+test_data.shape
+test_data = test_data.reshape(1620, 64 * 17)
+test_data.astype('float32') / 255
+
+# make predictions
+pred = network.predict_classes(test_data)
+results = list(pred)
+print(results[:10])
+```
+
+    [6, 3, 9, 2, 5, 7, 6, 3, 1, 0]
+
+
+
+```python
+# create a dataframe containing the results
+df = pd.DataFrame(results)
+```
+
+```python
+# write the predictions to output file
+df.to_csv('submissions/digits_test_labelled.csv', index_label='id', header=['labels'])
+```
