@@ -115,3 +115,11 @@ You can use the following resources to to get acquainted with some classificatio
   - You are free to use all manner of tools
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
 
+###### A brief explanation about the solution
+* Both of the datasets (iris and digits) challenges translate to classification problems.
+* As such they fall under Supervised Machine Learning tasks.
+* Different machine learning algorithms used in classification tasks were used to fit the training data sets and evaluated on the validation sets.
+* The accuracy scores from the different models were benchmarked against each other.
+* Random Forest Classifier was chosen to classify the iris dataset after conducting hyperparameter tuning.
+* SVM classifier was used to classify the digits dataset after conducting hyperparameter tuning.
+* These two algorithms were the best performers on the training and validation sets on the respective data sets.
