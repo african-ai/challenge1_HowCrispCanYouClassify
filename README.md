@@ -115,3 +115,11 @@ You can use the following resources to to get acquainted with some classificatio
   - You are free to use all manner of tools
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
 
+
+# Model selection motivation
+
+IRIS
+For Iris, since the dataset was very small, i did crossvalidation for model selection and selected SVM since I got better estimates in terms of accuracy (around Accuracy: 0.95 (+/- 0.12) vs Accuracy: 0.90 (+/- 0.09) for cross-validation)
+
+DIGITS
+Split training data into training (70%) and validation (30%). Chose Logistic Regression based on robustness for several splits and good accuracy. 
