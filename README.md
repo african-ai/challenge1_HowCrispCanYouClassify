@@ -115,3 +115,4 @@ You can use the following resources to to get acquainted with some classificatio
   - You are free to use all manner of tools
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
 
+I ran several models out of the box (RF, LDA, KNN, SVM, lasso and different permutations of quadratic data transformations and weighting based on class probabilities) and for each dataset chose the top models and tuned parameters for the final model.
