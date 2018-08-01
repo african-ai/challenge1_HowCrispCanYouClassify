@@ -1,0 +1,61 @@
+
+
+# Goal to determine the type of Iris Plant
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns; sns.set()
+from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import RandomForestClassifier
+
+
+# Import data
+ts = pd.read_csv("C:/Users/dmunene/OneDrive - Dalberg Global Development Advisors/RESSOL/Personal/Data Analysis/SatoAI/Classification/challenge1_HowCrispCanYouClassify-master/data/iris_test.csv")
+
+tr = pd.read_csv("C:/Users/dmunene/OneDrive - Dalberg Global Development Advisors/RESSOL/Personal/Data Analysis/SatoAI/Classification/challenge1_HowCrispCanYouClassify-master/data/iris_train.csv")
+
+# Exploring dataset
+tr.columns
+
+# Cleaning Target column
+trt = tr.drop(['labels'], axis = 1)
+
+# Reading Features and target as values
+features = tr[['0','1','2','3']].values
+tr1 = tr['labels'].values
+
+# Cleaning Index column
+tst = ts.drop(['Unnamed: 0'], axis = 1)
+
+
+# Visualizing the dataset
+plt.scatter(features[:,0],features[:,1],s = 50,cmap = 'RdBu')
+
+plt.scatter(features[:,2],features[:,3],s = 50,cmap = 'RdBu')
+
+#plt.scatter(features[:,0],features[:,3],s=50, cmap = 'RdBu')
+
+#plt.scatter(features[:,1],features[:,2],s = 50, cmap = 'RdBu')
+
+# Gaussian NB
+model = GaussianNB()
+model.fit(features,tr1);
+
+y_test = model.predict(tst)
+
+# Using Random Forest
+rf_model = RandomForestClassifier(n_estimators = 1000,max_features = 4,oob_score = True,random_state = 301)
+
+rf_model.fit(features,tr1)
+
+y_test2 = rf_model.predict(tst)
+iris_test_labelled = pd.DataFrame(y_test2, columns = ['4'])
+
+
+
+#Assessing Score of rf model
+rf_model.oob_score_
+
+# Writing output to csv
+y_test2.to_csv('iris_test_labelled.csv', header = True, index = True, sep = ',')
