@@ -1,0 +1,54 @@
+
+# to identify a digit/number given optical data from handwritten digits
+
+# -*- coding: utf-8 -*-
+import pandas as pd
+import seaborn as sns; sns.set()
+from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import RandomForestClassifier
+
+# Import data
+ts = pd.read_csv("C:/Users/dmunene/OneDrive - Dalberg Global Development Advisors/RESSOL/Personal/Data Analysis/SatoAI/Classification/challenge1_HowCrispCanYouClassify-master/data/digits_test.csv")
+
+tr = pd.read_csv("C:/Users/dmunene/OneDrive - Dalberg Global Development Advisors/RESSOL/Personal/Data Analysis/SatoAI/Classification/challenge1_HowCrispCanYouClassify-master/data/digits_train.csv")
+
+
+# Exploring Train & Test datasets
+tr.columns
+ts.columns
+
+# Cleaning Target column
+X = tr.drop(['labels','Unnamed: 0'], axis = 1)
+
+# Cleaning Index column
+test = ts.drop(['Unnamed: 0'], axis=1)
+
+# Reading Features and target as values
+#X = tr[:].values
+y = tr['labels'].values
+
+model = GaussianNB()
+model.fit(X,y);
+
+
+y_test = model.predict(test)
+
+# Using Random Forest
+rf_model = RandomForestClassifier(n_estimators = 1000,max_features = 64,oob_score = True,random_state = 301)
+
+rf_model.fit(X,y)
+
+y_test2 = rf_model.predict(test)
+digit_test_labelled = pd.DataFrame(y_test2, columns = ['labels'])
+
+
+# Renaming axis
+
+digit_test_labelled.rename_axis('id')
+
+#Assessing Score of rf model
+rf_model.oob_score_
+
+# Writing output to csv
+digit_test_labelled.to_csv('C:/Users/dmunene/OneDrive - Dalberg Global Development Advisors/RESSOL/Personal/Data Analysis/SatoAI/Classification/challenge1_HowCrispCanYouClassify-master/submissions/digit_test_labelled.csv', header = True, index = True, sep = ',')
+
