@@ -1,4 +1,4 @@
-# How Crisp Can you Classify? : A Data Challenge to flex your classification skills 
+﻿# How Crisp Can you Classify? : A Data Challenge to flex your classification skills 
 
 ## Data Challenge Task
 This Data Challenge has 2 tasks;
@@ -114,4 +114,28 @@ You can use the following resources to to get acquainted with some classificatio
   - Additional rules MAY be provided on the code challenge and will vary for each challenge
   - You are free to use all manner of tools
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
+
+##### The Model Used for Iris Data Set and Why
+*After doing simple EDA for the data to visualize the data point distribution, I embarked on model selection where the below models were used
+- Support Vector Machine (SVM)
+- Gaussian Naive Bayes classification
+- K-Nearest Neighbors (KNN) and,
+- Logistics Regression
+
+*SVM, Gaussian NB and KNN performed very well with better accuracy measures compared to the linear Regression (best for binary). 
+*Results Compared how the features performed together and separately. In a nutshell, the accuracy was better with all features involved.
+*I choose the SVM model than any other because it gave 100% accuracy prediction score compared to the other classifiers at 98%
+*However, good to note that SVM gave 100% accuracy, because I choose to add the linear Kernel Trick which favored the results
+
+#### Crisp Classification on Handwritten Digits
+This is the second classification that I found very interesting. Below were the choose model for the classification 
+- Support Vector Machine (SVM)
+- Decision Trees
+- K-Nearest Neighbors (KNN) and,
+- Logistics Regression
+- Neural Networks - Multi layer Perceptron (MLP)
+
+* KNN and SVM performed notably well in this classification with better accuracy measures compared to the Multilayer perceptron neural network and Decision Trees. SVM and Logistic Regression were relatively better
+*Results included all the features in the dataset and the highest precision model was chosen - KNN at 98%.
+*However, good to note that SVM was very close to KNN at 97%, ensemble methods would have to be used for better results in an industrial case.
 
