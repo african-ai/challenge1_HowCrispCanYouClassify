@@ -85,15 +85,15 @@ In each case:
 
 The Iris Dataset Details:
 * 150 instances/records
-	* train - 110 records
-	* test  - 40 records
+  * train - 110 records
+  * test  - 40 records
 * 4 attributes/features
 * 3 classes
 
 The Handwritten Digits Dataset details: 
 * 5620 instances/records 
-	* train - 4000 records
-	* test  - 1620 records
+  * train - 4000 records
+  * test  - 1620 records
 * 64 attributes/features
 * 10 classes
 
@@ -104,14 +104,19 @@ You can use the following resources to to get acquainted with some classificatio
 * [Support Vector Machines](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.07-Support-Vector-Machines.ipynb)
 
 ###### Terms and Conditions
-  - Each Data Hacker can participate in as many challenges as they wish
-  - Branches per Data Challenge need to be a unique combination of a genuine phone number and email address ```2348177779360_youremail@gmail.com```
-  - Multiple submissions are allowed for as long as the challenge is still open, once the challenge is closed, the last submitted changes will be the evaluated solution
-  - african.ai reserves the right to announce the winners
-  - african.ai reserves the right to reward the winners based on african.ai criterion
-  - Do not share any code that you cannot open source on the Git Repository as it is public and african.ai will not be liable for any breach of intellectual property (if any) once shared on the platform.
-  - Data Challenges are time bound - the time restriction is specified on each challenge
-  - Additional rules MAY be provided on the code challenge and will vary for each challenge
-  - You are free to use all manner of tools
-  - Successive interviews for projects MAY be run to satisfy participating african.ai partners
+ - Each Data Hacker can participate in as many challenges as they wish
+ - Branches per Data Challenge need to be a unique combination of a genuine phone number and email address ```2348177779360_youremail@gmail.com```
+ - Multiple submissions are allowed for as long as the challenge is still open, once the challenge is closed, the last submitted changes will be the evaluated solution
+ - african.ai reserves the right to announce the winners
+ - african.ai reserves the right to reward the winners based on african.ai criterion
+ - Do not share any code that you cannot open source on the Git Repository as it is public and african.ai will not be liable for any breach of intellectual property (if any) once shared on the platform.
+ - Data Challenges are time bound - the time restriction is specified on each challenge
+ - Additional rules MAY be provided on the code challenge and will vary for each challenge
+ - You are free to use all manner of tools
+ - Successive interviews for projects MAY be run to satisfy participating african.ai partners
 
+##### Solution
+I used the [Scikit-learn](http://scikit-learn.org/)  library to solve both tasks. The reason i chose this library it is because it is easy to use and has a great documentation. It is also based on python which I am comfortable with.
+My general approach was to test the performance of the various classification algorithms provided by [Scikit-learn](http://scikit-learn.org/) on the training dataset and then pick the algorithm with the highest accuracy. This is the algorithm i would use to make the predictions on the test datasets.
+ - **Task 1**(Iris Dataset)- For this dataset the [RandomForestClassifier](http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier) won the battle with an accuracy score of 0.99 as compared to [KNN](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) and [SVM](http://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html) which had an accuracy score of 0.95.
+ - **Task 2**(Digits Dataset)- For this dataset I chose the [KNN](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)  model as it performed best compared to the rest.
