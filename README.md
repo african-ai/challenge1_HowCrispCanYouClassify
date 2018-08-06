@@ -114,4 +114,14 @@ You can use the following resources to to get acquainted with some classificatio
   - Additional rules MAY be provided on the code challenge and will vary for each challenge
   - You are free to use all manner of tools
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
+  
+  
+##### Digits Challenge.
+Random Forest vs Linear Regression.
+
+I decided to use Random forest algorithmn over linear regression algorithmn. RF performed better than LR according to the considered accuracy measured in approximately 100% of the datasets whereas the LR measured 98% for the dataset. Since the data is well distributed with no overfitting values RF performed better than LR
+
+###### Iris Challenge.
+SVC vs the Naive bayes(Gaussian NB)
+This was a multi class label prediction where given the width, height for sepals and petals should classify the class the flower belongs to.Naive bayes works well with linear problems as opposed to classifier problems. It gave an accuracy of 90% for the dataset as opposed to 100% for the SVC.
 
