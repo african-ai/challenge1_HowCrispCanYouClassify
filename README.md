@@ -115,3 +115,23 @@ You can use the following resources to to get acquainted with some classificatio
   - You are free to use all manner of tools
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
 
+
+## On My Submissions
+I used jupyter notebook to create a model for learning.
+In order to understand the data I begin by exploring the datasets using pandas library then visualizing both datasets using matplotlib and seaborn.
+
+#### Iris Dataset
+For this dataset, I realize from the visualization that I could use at least four simple algorithms. These include:
+    * Support Vector Machines(SVM)
+    * KNeighborsClassifier(Knn)
+    * Naive_Bayes(NB)
+    * Decision Trees(DT)
+These four algorithms are succefully trained and applied to predict the species of each sample. The results indicate a high level of accuracy for each classifier. SVM achieves 98.18 % accuracy, NB locks in 98.18 % accuracy, Knn results in 99.09 %, while DT being the most accurate is shown to be 100 % accurate on the training data.
+From the foregoing, I found all algorithms to be satisfactory in performance but chose the prediction results of Decision Trees due to the outstanding accuracy.
+
+#### Digits Dataset
+I found it possible to apply two algorithms on this dataset namely:
+    * Support vector machines
+    * Logistic regression 
+The two algorithms are successfully trained and applied to predict the digit value for the test samples. Again, each classifier achieves high accuracy levels. Support vector machines achieves 100 % accuracy while Logistic regression returns a 97.85 % accuracy. Contrary to what the results might show, I chose to work with Logistic regression as the results for SVM for this dataset 
+are what I would term as unreasonable. It returned the same digit regardless of the dataset sample.
