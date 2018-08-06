@@ -116,12 +116,16 @@ You can use the following resources to to get acquainted with some classificatio
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
 
 #### Iris Flower classification
-- Pytorch vs Sklearn(Random Forest Classifier)
+
+Pytorch vs Sklearn(Random Forest Classifier)
 
 I tried using Pytorch - Logistic regression to create a nueral network for Multi class classification, however I found out the nueral network would pn predict two species of the flower. Therefore instead of creating a multiclass labels, I assigned digits 0, 1, 2 to represent flower Iris-virginica, Iris-versicolor, Iris-setosa respectively. This was easier since any classifier would be able to make predictions. 
 
 Sklearn(Random Forest Classifier) Works better since it was able to learn based on the labels on the train data and give a very high prediction.
+
+
 #### Digits classification
+
 Random Forest Classifier:
 
 Based on the Iris classification, I decided to used the same mechanism for digits classification. Random Forest Classifier gave a 100% in the train data, and 96% on the test data.
