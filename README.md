@@ -115,3 +115,9 @@ You can use the following resources to to get acquainted with some classificatio
   - You are free to use all manner of tools
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
 
+
+
+
+###### Explanation and Methodology
+Fairly simple models for both datasets. The Iris dataset is tiny, with around 100 examples for training and only 40 for testing. Large complicated models can have problems with overfitting with such a small dataset. Instead, I used sklearn's RandomForestClassifier because decision trees are not prone to overfitting. With some cross validation, this approach performed well. For the digits dataset, I built a simple one layer neural network. The data seemed to be pretty straightforward so one dense layer seemed to be enough for training, especially after good hyperparameter tuning. 
+
