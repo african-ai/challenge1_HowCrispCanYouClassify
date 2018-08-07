@@ -115,3 +115,7 @@ You can use the following resources to to get acquainted with some classificatio
   - You are free to use all manner of tools
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
 
+  
+For the first classification task of the Iris dataset, I used Random Forest algorithm for classification as it prevented overfitting of the dataset due to the successive splits performed at each tree point compared to other algorithms such as SVM and Naive Bayes
+
+For the second classification task of the digits dataset, I used a feed forward neural network which outperforms linear classifiers due to its ability to learn non linear relationships between the training data.
