@@ -115,3 +115,19 @@ You can use the following resources to to get acquainted with some classificatio
   - You are free to use all manner of tools
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
 
+
+SOLUTION
+Both questions were multi-classification problems and thus both recall & precision would be important.
+
+Data cleaning:
+removing a column called Unnamed
+
+Data exploration:
+For iris dataset, column 3 & 4 were critical, where as 1 & 2 were less important. In additionk, column 2 had some outliers. The labels were well balanced thus little imbalanced.
+For Mnist dataset, there were no NaNs, and no feature was highly correlated to the labels, thus all columns were equally important.
+
+Data Modelling:
+The training dataset was divided into test and training for model training reasons. The training data was split further to several folds for cross validation purposes and severals models tried on the data and their predictions ensembled. The final predictions were made by stacking several models, Random Forest, Extra Trees, SVM, KNN and XGB. A bayesian approach was used for parameters tuning. 
+
+
+
