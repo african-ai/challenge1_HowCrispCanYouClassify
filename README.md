@@ -97,7 +97,7 @@ The Handwritten Digits Dataset details:
 * 64 attributes/features
 * 10 classes
 
- 
+
 ##### Resources
 You can use the following resources to to get acquainted with some classification problems:
 * [Naive Bayes Classification](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.05-Naive-Bayes.ipynb)
@@ -115,3 +115,10 @@ You can use the following resources to to get acquainted with some classificatio
   - You are free to use all manner of tools
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
 
+# SUBMISSION
+
+Using AML to discover the best ML pipeline for predicting both Iris and digit classes aided discovery of classifiers much quicker
+
+The AML used here is TPOT
+
+A link to an end-to-end colab notebook is [here](http://bit.ly/IRIS-TPOT-challenge1_HowCrispCanYouClassify)
