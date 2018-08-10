@@ -114,4 +114,10 @@ You can use the following resources to to get acquainted with some classificatio
   - Additional rules MAY be provided on the code challenge and will vary for each challenge
   - You are free to use all manner of tools
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
+  
+# Work Done
+- The `Iris Classification.ipynb` notebook contains the process used to create a neural network that learns the Iris flower features and does predictions on the test set.
+- The `submissions/iris_actual_submission.csv` file contains the predicted labels for the unlabelled `data/iris_test.csv` file.
+- There wasn't enough time on my hands to start on the digits classification. Thought I'd just submit this one and work on that next week when time allows.
+
 
