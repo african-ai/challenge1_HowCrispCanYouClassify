@@ -127,10 +127,10 @@ For iris dataset, column 3 & 4 were critical, where as 1 & 2 were less important
 For Mnist dataset, there were no NaNs, and no feature was highly correlated to the labels, thus all columns were equally important.
 
 Data Modelling:
-The training dataset was divided into test and training for model training reasons. The training data was split further to several folds for cross validation purposes and severals models tried on the data and their predictions ensembled. The final predictions were made by stacking several models, Random Forest, Extra Trees, SVM, KNN and XGB. A bayesian approach was used for parameters tuning. 
+The training dataset was divided into test and training for model training reasons. The training data was split further to several folds for cross validation purposes and severals models tried on the data and their predictions ensembled. The final predictions were made by stacking several models, Random Forest, Extra Trees, SVM, KNN and XGB. A bayesian approach was used for parameters tuning. In addition, a covnet was added to the primary models for the digit problem.
 
 Feature Engineering:
-For Iris dataset, there was a little skew and a few outliers in the second column. However, log transformations to reduce skew and dropping some of the rows with outliers was not very helpful to the final predictions.
+For Iris dataset, there was a little skew and a few outliers in the second column. However, log transformations to reduce skew and dropping some of the rows with outliers was not very helpful in the final predictions.
 
 
 
