@@ -115,8 +115,10 @@ You can use the following resources to to get acquainted with some classificatio
   - You are free to use all manner of tools
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
 
-###### Brief Explanation
+## Brief Explanation
 
-* Iris: For this project, I ended up using K-Nearest Neighbors Classifier as my model after trying a few models. It yielded the best prediction after testing a number of nearest neighbors and finally settled on 3.
+### Iris: 
+For this project, I ended up using K-Nearest Neighbors Classifier as my model after trying a few models. It yielded the best prediction after testing a number of nearest neighbors and finally settled on 3.
 
-* Digit: For this Project, I used a CNN model via keras with Adam optimizer. I train the data with various hyperparameters before arriving at my best prediction.
+### Digit: 
+For this Project, I used a CNN model via keras with Adam optimizer. I train the data with various hyperparameters before arriving at my best prediction.
