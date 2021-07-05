@@ -115,3 +115,19 @@ You can use the following resources to to get acquainted with some classificatio
   - You are free to use all manner of tools
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
 
+
+## Machine Learning Algorithms Chosen:
+**1. Naive Bayes Classification: For challenge 1**
+  - It's very fast and simple algorithm to implement since it has few tunable parameters. 
+  - Oftenly it's easier to interpret which gives it a upper hand over _Random Forests_. 
+  - It provides straight probalistic prediction ss compared to _Support Vector Machines(SVM)_, which lacks direct probabilistic interpretation. 
+  - Finally since the dataset was quite smaller, I preferred to choose this algorithm since it is known to be a quick-and-dirty baseline for a classification problem, due to providing few tunable parameters.
+
+
+**2. Support Vector Machines(SVM): For challenge 2**
+  - Takes up very little memory especially when a large dataset is under training. This is due to the fact that it has dependence on relatively few support vectors hence able to produce compact model.
+  - Has a good ability to work well with high dimension of data, as this challenge had 64 dimensions of features. Thus, this motivated me to choose this model for the challenge, since it is well suited.
+  - I preferred _SVM_ over _Random Forests_ since it is easily interpretable.
+
+
+
