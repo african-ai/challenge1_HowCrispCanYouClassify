@@ -115,3 +115,5 @@ You can use the following resources to to get acquainted with some classificatio
   - You are free to use all manner of tools
   - Successive interviews for projects MAY be run to satisfy participating african.ai partners
 
+##### Explanation
+After importing the necessary libraries, data was imported into the IDE and cleaned. The necessary features were collected and set together, separate from the target variable. Models were then fitted through the train data before being used to predict the test data. This procedure was done using Gaussian Naive Bayes and Random Forest. Random Forest model yielded a very high accuracy score on both Iris and Digits dataset and hence considered optimal in producing the output. The digits dataset required setting the axis name to 'id' and this was done before printing the output. 
